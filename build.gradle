@@ -20,6 +20,13 @@ allprojects {
 
 
     apply plugin: 'org.sonarqube'
+            sonarqube {
+  properties {
+    property "sonar.projectKey", "vinod-1_gradle-multi-module"
+    property "sonar.organization", "vinod-1"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
+}
 
 subprojects {
     apply plugin: 'java'
@@ -35,13 +42,7 @@ subprojects {
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
     }
-        sonarqube {
-  properties {
-    property "sonar.projectKey", "vinod-1_gradle-multi-module"
-    property "sonar.organization", "vinod-1"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
-}
+
 
 }
 
